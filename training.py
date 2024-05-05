@@ -24,8 +24,8 @@ print(is_available())
 print(torch.__version__)
 """
 # set up accelerator may not be necessary for QLoRA
-device = 'cuda:0'
-device = torch.device(device)
+#device = 'cuda:0'
+#device = torch.device(device)
 
 fsdp_plugin = FullyShardedDataParallelPlugin(
     state_dict_config=FullStateDictConfig(offload_to_cpu=True, rank0_only=False),
