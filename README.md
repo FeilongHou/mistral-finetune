@@ -10,25 +10,26 @@ The primary objective of this project is to enable users to fine-tune Mistral LL
 ## Getting Started
 To get started with fine-tuning Mistral LLM, follow these steps:
 
-Clone the Repository: Clone this repository to your local machine using the following command:
+1. Clone the Repository: Clone this repository to your local machine using the following command:
+  ```
+  git clone https://github.com/your-username/mistral-llm-finetuning.git
+  ```
+2. Install Dependencies: Ensure that you have the necessary dependencies installed. You may use a virtual environment to manage dependencies. Install dependencies using:
+  ```
+  pip install -q -U bitsandbytes
+  pip install -q -U git+https://github.com/huggingface/transformers.git
+  pip install -q -U git+https://github.com/huggingface/peft.git
+  pip install -q -U git+https://github.com/huggingface/accelerate.git
+  pip install -q -U datasets
+  ```
+3. Prepare Data: We used [AiresPucrs/toxic-comments](https://huggingface.co/datasets/AiresPucrs/toxic-comments)
 
-'''
-git clone https://github.com/your-username/mistral-llm-finetuning.git
-'''
-Install Dependencies: Ensure that you have the necessary dependencies installed. You may use a virtual environment to manage dependencies. Install dependencies using:
+4. Fine-Tune Mistral LLM: Utilize the provided scripts and notebooks to fine-tune Mistral LLM on your data. Experiment with different hyperparameters, training strategies, and model architectures to optimize performance for your task by running train_with_data.py.
 
-Copy code
-pip install -r requirements.txt
-Prepare Data: Prepare your task-specific data for fine-tuning. This may involve data preprocessing, splitting into train/validation/test sets, and formatting the data according to the input requirements of Mistral LLM.
-
-Fine-Tune Mistral LLM: Utilize the provided scripts and notebooks to fine-tune Mistral LLM on your data. Experiment with different hyperparameters, training strategies, and model architectures to optimize performance for your task.
-
-Evaluate Performance: Evaluate the fine-tuned model on your task-specific evaluation metrics. Monitor metrics such as accuracy, precision, recall, F1-score, perplexity, etc., depending on the nature of your task.
-
-Deploy and Integrate: Once satisfied with the performance of the fine-tuned model, deploy it in your application or integrate it into your workflow for real-world use cases.
+5. Evaluate Performance: Evaluate the fine-tuned model on your task-specific evaluation metrics. Monitor metrics such as accuracy, precision, recall, F1-score, perplexity, etc., depending on the nature of your task by running inference_with_data.py.
 
 Resources
-Documentation: Refer to the documentation folder for detailed guides, tutorials, and best practices for fine-tuning Mistral LLM.
+Documentation: Huggingface contains almost all the documentation you need.
 Examples: Explore the examples folder to see demonstrations of fine-tuning Mistral LLM for various NLP tasks.
 Pre-trained Models: Access pre-trained Mistral LLM checkpoints for transfer learning or as baselines for fine-tuning.
 Community: Join the discussion on our community forum or engage with other users on social media platforms to share experiences, ask questions, and collaborate on projects.
