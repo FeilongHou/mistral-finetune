@@ -30,9 +30,8 @@ To get started with fine-tuning Mistral LLM, follow these steps:
 
 ## Resources
 1. Documentation: Huggingface contains almost all the documentation you need.
-2. Examples: Explore the examples folder to see demonstrations of fine-tuning Mistral LLM for various NLP tasks.
-3. Pre-trained Models: Access pre-trained Mistral LLM checkpoints for transfer learning or as baselines for fine-tuning.
-4. Community: Join the discussion on our community forum or engage with other users on social media platforms to share experiences, ask questions, and collaborate on projects.
+2. Pre-trained Models: Access pre-trained Mistral LLM checkpoints for transfer learning or as baselines for fine-tuning.
+3. Community: Join the discussion on our community forum or engage with other users on social media platforms to share experiences, ask questions, and collaborate on projects.
 ## Contributing
 Contributions to this project are welcome! Whether it's bug fixes, feature enhancements, documentation improvements, or new examples, feel free to submit pull requests to help improve the repository.
 
