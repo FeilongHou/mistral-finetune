@@ -15,7 +15,7 @@ from datetime import datetime
 
 from accelerate import FullyShardedDataParallelPlugin, Accelerator
 from torch.distributed.fsdp.fully_sharded_data_parallel import FullOptimStateDictConfig, FullStateDictConfig
-from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model
+from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model, PeftModel
 
 # check your torch version make sure it is GPU version
 """
@@ -195,14 +195,14 @@ trainer = transformers.Trainer(
         optim="paged_adamw_8bit",
         logging_dir="./logs",        # Directory for storing logs
         save_strategy="steps",       # Save the model checkpoint every logging step
-        save_steps=5000,               # Save checkpoints every 50 steps
+        save_steps=5000,               # Save checkpoints every 5000 steps
         # evaluation_strategy="steps", # Evaluate the model every logging step
         # eval_steps=50,               # Evaluate and save checkpoints every 50 steps
         do_eval=False,                # Perform evaluation at the end of training
-        # report_to="wandb",           # Comment this out if you don't want to use weights & baises
+        report_to="wandb",           # Comment this out if you don't want to use weights & baises
         run_name=f"{run_name}-{datetime.now().strftime('%Y-%m-%d-%H-%M')}"          # Name of the W&B run (optional)
     ),
     data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
 model.config.use_cache = False  # silence the warnings. Please re-enable for inference!
-trainer.train()
+trainer.train('mistral-toxic/checkpoint-50')
